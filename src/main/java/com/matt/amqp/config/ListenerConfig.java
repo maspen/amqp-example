@@ -4,13 +4,15 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-//@ComponentScan(basePackages = "com.matt.amqp")
 public class ListenerConfig {
-
+	@Value("${queueName}")
+	String queueName;
+	
 	private static SimpleMessageListenerContainer container = null;
 	private static MessageListenerAdapter adapter = null;
 	
@@ -24,7 +26,7 @@ public class ListenerConfig {
 	SimpleMessageListenerContainer container() {
 		if(null == container) {
 			container = new SimpleMessageListenerContainer(connectionFactory);
-			container.setQueueNames(Config.queueName);
+			container.setQueueNames(queueName);
 			container.setMessageListener(adapter());
 		}
 		return container;

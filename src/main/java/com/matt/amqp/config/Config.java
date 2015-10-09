@@ -6,15 +6,21 @@ import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Config {
-	static String host = "localhost";
-	static String queueName = "test-queue";
-	static String exchangeName = "new-exchange";
-	static String routingKey = "foo.*";
+	// NOTE: fields populated via @Value cannot be static
+	@Value("${host}")
+	String host;
+	@Value("${queueName}")
+	String queueName;
+	@Value("${exchangeName}")
+	String exchangeName;
+	@Value("${routingKey}")
+	String routingKey;
 	
 	private static ConnectionFactory connectioFactory = null;
 	private static RabbitAdmin rabbitAdmin = null;
