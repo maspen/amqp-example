@@ -29,6 +29,7 @@ EventHandler says: Hello world - FROM Sender
 in src/main/docker is the Dockerfile.
 to create Docker image, at project's root directory, do:
 > mvn package docker:build
+
 [optional] you can "push" your docker image to your docker repo but will need to change the pom.xml file:
 ```
 <docker.image.prefix>maspen</docker.image.prefix>
