@@ -1,7 +1,0 @@
-com\matt\amqp\listener\Listener.class
-com\matt\amqp\config\EventHandler.class
-com\matt\amqp\config\SenderConfig.class
-com\matt\amqp\sender\Sender.class
-com\matt\amqp\config\ListenerConfig.class
-com\matt\amqp\config\Config.class
-com\matt\amqp\Application.class
