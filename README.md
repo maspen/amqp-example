@@ -25,3 +25,13 @@ EventHandler says: Hello world - FROM Sender
 2015-10-12 11:02:29.727  INFO 10832 --- [lication.main()] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
 ...
 ```
+# starting application as Docker image
+in src/main/docker is the Dockerfile.
+to create Docker image, at project's root directory, do:
+> mvn package docker:build
+[optional] you can "push" your docker image to your docker repo but will need to change the pom.xml file:
+```
+<docker.image.prefix>maspen</docker.image.prefix>
+```
+
+once you see the mvn ran successfully, 
