@@ -11,7 +11,7 @@ public class SenderConfig {
 	
 	private static RabbitTemplate template = null;
 	
-	@Autowired // from Config
+	@Autowired // // COMMENTED OUT(from Config)
 	ConnectionFactory connectionFactory;
 	
 	@Bean

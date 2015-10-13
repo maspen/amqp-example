@@ -16,7 +16,7 @@ public class ListenerConfig {
 	private static SimpleMessageListenerContainer container = null;
 	private static MessageListenerAdapter adapter = null;
 	
-	@Autowired // from Config
+	@Autowired //  //from Config
 	ConnectionFactory connectionFactory;
 	
 	@Autowired // from EventHandler
