@@ -25,7 +25,7 @@ public class Listener {
 		if(!started) {
 			started = true;
 			System.out.println("Listener starting ...");
-			System.out.println("***** SPRING_RABBITMQ_ADDRESSES: " + environment.getProperty("SPRING_RABBITMQ_ADDRESSES"));
+			System.out.println("***** environment.getProperty(\"SPRING_RABBITMQ_ADDRESSES\"): " + environment.getProperty("SPRING_RABBITMQ_ADDRESSES"));
 			container.start();
 		}
 	}
