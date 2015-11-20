@@ -25,6 +25,7 @@ public class Application implements CommandLineRunner {
     public static void main(String[] args) {
     	//context = SpringApplication.run(Application.class, args);
     	// print out value of "SPRING_RABBITMQ_ADDRESSES" if any:
+    	System.out.println("==Welcome to AMQP programme==");
     	System.out.println("***** in main, 'System.getenv(\"SPRING_RABBITMQ_ADDRESSES\")': " + System.getenv("SPRING_RABBITMQ_ADDRESSES"));
     	
     	SpringApplication.run(Application.class, args);
